@@ -3,6 +3,8 @@ defmodule TestApi.Content.Dashboard do
   import Ecto.Changeset
 
   schema "dashboards" do
+    field :title, :string
+    belongs_to :user, TestApi.Account.User
 
     timestamps()
   end
@@ -10,7 +12,7 @@ defmodule TestApi.Content.Dashboard do
   @doc false
   def changeset(dashboard, attrs) do
     dashboard
-    |> cast(attrs, [])
-    |> validate_required([])
+    |> cast(attrs, [:title])
+    |> validate_required([:title])
   end
 end

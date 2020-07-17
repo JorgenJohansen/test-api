@@ -3,6 +3,11 @@ defmodule TestApi.Content.Note do
   import Ecto.Changeset
 
   schema "notes" do
+    field :title, :string
+    field :content, :string
+
+    belongs_to :user, TestApi.Account.User
+    belongs_to :dashboard, TestApi.Content.Dashboard
 
     timestamps()
   end

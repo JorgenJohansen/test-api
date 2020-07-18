@@ -11,6 +11,6 @@ defmodule TestApiWeb.DashboardView do
   end
 
   def render("dashboard.json", %{dashboard: dashboard}) do
-    %{id: dashboard.id}
+    %{id: dashboard.id, title: dashboard.title, user_id: dashboard.user_id}
   end
 end

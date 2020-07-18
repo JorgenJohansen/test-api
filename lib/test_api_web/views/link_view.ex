@@ -11,6 +11,6 @@ defmodule TestApiWeb.LinkView do
   end
 
   def render("link.json", %{link: link}) do
-    %{id: link.id}
+    %{id: link.id, title: link.title, link: link.link, user_id: link.user_id, dashboard_id: link.dashboard_id}
   end
 end

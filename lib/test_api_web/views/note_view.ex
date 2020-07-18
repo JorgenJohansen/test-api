@@ -11,6 +11,6 @@ defmodule TestApiWeb.NoteView do
   end
 
   def render("note.json", %{note: note}) do
-    %{id: note.id}
+    %{id: note.id, title: note.title, content: note.content, user_id: note.user_id, dashboard_id: note.dashboard_id}
   end
 end

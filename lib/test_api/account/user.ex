@@ -17,6 +17,6 @@ defmodule TestApi.Account.User do
   def changeset(user, attrs) do
     user
     |> cast(attrs, [:email, :password, :token, :provider, :name, :age])
-    |> validate_required([:name])
+    |> validate_required([:name, :email])
   end
 end

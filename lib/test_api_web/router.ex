@@ -17,10 +17,12 @@ defmodule TestApiWeb.Router do
   # Api scope.
   scope "/api", TestApiWeb do
     pipe_through :api
-    resources "/users", UserController, except: [:new, :edit]
-    resources "/dashboards", DashboardController, except: [:new, :edit]
-    resources "/notes", NoteController, except: [:new, :edit]
-    resources "/links", LinkController, except: [:new, :edit]
+    resources "/users", UserController
+    resources "/dashboards", DashboardController do
+      resources "/notes", NoteController
+      resources "/links", LinkController
+    end
+
   end
 
   # Enables LiveDashboard only for development

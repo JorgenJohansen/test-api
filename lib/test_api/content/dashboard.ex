@@ -4,7 +4,10 @@ defmodule TestApi.Content.Dashboard do
 
   schema "dashboards" do
     field :title, :string
+
     belongs_to :user, TestApi.Account.User
+    has_many :note, TestApi.Content.Note
+    has_many :link, TestApi.Content.Link
 
     timestamps()
   end

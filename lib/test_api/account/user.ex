@@ -10,6 +10,10 @@ defmodule TestApi.Account.User do
     field :provider, :string
     field :token, :string
 
+    has_many :dashboard, TestApi.Content.Dashboard
+    has_many :note, TestApi.Content.Note
+    has_many :link, TestApi.Content.Link
+
     timestamps()
   end
 
